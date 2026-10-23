@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad — NutriAlly</title>
+<meta name="description" content="Política de privacidad de la app NutriAlly para Android.">
+<style>
+  :root { --text:#1f2a24; --muted:#5b6b62; --accent:#2f7a5e; --bg:#fbfaf7; --card:#ffffff; --line:#e3e6e1; }
+  @media (prefers-color-scheme: dark) {
+    :root { --text:#e6ece8; --muted:#a3b2a9; --accent:#7cc7a6; --bg:#141816; --card:#1b201d; --line:#2c332f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { border-bottom: 1px solid var(--line); margin-bottom: 28px; padding-bottom: 16px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; line-height: 1.25; }
+  h2 { font-size: 1.2rem; margin: 32px 0 8px; color: var(--accent); }
+  h3 { font-size: 1.02rem; margin: 20px 0 4px; }
+  p, li { margin: 6px 0; }
+  ul { padding-left: 22px; }
+  .muted { color: var(--muted); font-size: .95rem; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+  a { color: var(--accent); }
+  footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 14px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Política de privacidad de NutriAlly</h1>
+  <p class="muted">Vigente desde el 23 de octubre de 2026</p>
+</header>
+
+<p>Esta política explica qué datos usa la aplicación <strong>NutriAlly</strong> para Android, dónde se guardan, con quién se comparten y qué control tiene usted sobre ellos.</p>
+
+<div class="box">
+  <strong>En resumen:</strong> casi todo lo que usted registra (peso, comidas, fotos, notas de voz y su perfil) se guarda <strong>solo en su teléfono</strong>, en una base de datos cifrada. Lo único que sale del teléfono es la foto, y la nota de voz si graba una, cuando pide un análisis con inteligencia artificial para estimar las calorías de un plato. No pedimos su nombre ni su correo, no mostramos publicidad y no vendemos datos.
+</div>
+
+<h2>1. Responsable</h2>
+<p>NutriAlly es desarrollada por <strong>Zedry Carlos Araya Masis</strong>, quien opera con el nombre comercial <strong>Aion Teleos</strong>, en Cartago, Costa Rica.</p>
+<p>Contacto para cualquier consulta sobre privacidad: <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a></p>
+
+<h2>2. Datos que se guardan solo en su teléfono</h2>
+<p>Estos datos no se envían a nuestros servidores ni a terceros:</p>
+<ul>
+  <li><strong>Perfil:</strong> estatura, fecha de nacimiento, sexo biológico, nivel de actividad y objetivo nutricional. Se usan para calcular su gasto energético y su presupuesto calórico.</li>
+  <li><strong>Registros:</strong> peso, comidas, calorías y macronutrientes.</li>
+  <li><strong>Fotos de comidas y notas de voz</strong> que usted toma o graba dentro de la aplicación.</li>
+  <li><strong>Pasos y calorías activas</strong> leídos de Health Connect, si usted lo autoriza (ver sección 4).</li>
+  <li><strong>Estado de su suscripción</strong> premium.</li>
+</ul>
+<p>La base de datos de la aplicación está <strong>cifrada con AES-256</strong> (SQLCipher), con una clave protegida por el almacén seguro de claves de Android (Android Keystore). Las fotos y notas de voz se guardan en el almacenamiento privado de la aplicación, al que otras aplicaciones no tienen acceso. Ninguno de estos datos se incluye en las copias de seguridad automáticas de Android.</p>
+
+<h2>3. Datos que salen de su teléfono</h2>
+
+<h3>3.1 Análisis de comidas con inteligencia artificial</h3>
+<p>Cuando usted usa la función "Cámara Primero" para analizar un plato, la aplicación envía la <strong>foto</strong> y, si grabó una, la <strong>nota de voz</strong> a nuestro servidor mediante una conexión cifrada (HTTPS). El servidor las reenvía a la <strong>API de Google Gemini</strong> para estimar el nombre del plato, sus calorías y sus macronutrientes, y le devuelve el resultado.</p>
+<ul>
+  <li>Nuestro servidor <strong>no guarda</strong> las fotos ni las notas de voz: las procesa y las descarta.</li>
+  <li>Usamos la API de Gemini en su modalidad de pago. Según los términos de Google para esa modalidad, Google <strong>no usa este contenido para mejorar sus productos ni para entrenar sus modelos</strong>. Google puede conservarlo por un tiempo limitado para detectar abusos y por razones de seguridad y cumplimiento legal.</li>
+  <li>Para proteger su privacidad, le recomendamos evitar que aparezcan personas, documentos u otros datos personales en las fotos.</li>
+</ul>
+
+<h3>3.2 Identificador anónimo e integridad de la aplicación</h3>
+<p>Para proteger el servicio de análisis contra abusos, la aplicación usa:</p>
+<ul>
+  <li><strong>Firebase Authentication en modo anónimo:</strong> crea un identificador aleatorio para su instalación. No está vinculado a su nombre, correo ni número de teléfono.</li>
+  <li><strong>Firebase App Check con Play Integrity:</strong> permite a nuestro servidor comprobar que las solicitudes provienen de una copia genuina de NutriAlly instalada desde Google Play. Para ello, Google procesa señales técnicas sobre la integridad de la aplicación y del dispositivo.</li>
+</ul>
+
+<h3>3.3 Cupo diario de análisis</h3>
+<p>El plan gratuito incluye una cantidad limitada de análisis con inteligencia artificial por día. Para controlarlo, nuestro servidor guarda en <strong>Google Cloud Firestore</strong>, asociado a su identificador anónimo, cuántos análisis realizó cada día y si tiene la suscripción premium activa. No se guarda el contenido de los análisis.</p>
+
+<h3>3.4 Compras y suscripción</h3>
+<p>Los pagos los procesa <strong>Google Play</strong>. NutriAlly nunca recibe ni ve sus datos de pago. Para confirmar que una suscripción es válida, nuestro servidor consulta a Google Play con el comprobante de compra que Google entrega a la aplicación, y guarda una <strong>huella cifrada (hash)</strong> de ese comprobante para impedir que una misma compra se use en varias instalaciones.</p>
+
+<p class="muted">Nuestro servidor y su base de datos funcionan en Google Cloud, en Estados Unidos.</p>
+
+<h2>4. Health Connect</h2>
+<p>Con su autorización, NutriAlly <strong>lee</strong> de Health Connect sus <strong>pasos</strong> y sus <strong>calorías activas quemadas</strong>, únicamente para mostrar su balance energético del día en la pantalla principal. NutriAlly <strong>nunca escribe</strong> datos en Health Connect.</p>
+<ul>
+  <li>Estos datos se guardan solo en su teléfono y no se envían a nuestros servidores ni a terceros.</li>
+  <li>No se usan para publicidad ni se venden.</li>
+  <li>Puede retirar la autorización en cualquier momento desde la aplicación o desde los ajustes de Health Connect.</li>
+</ul>
+<p>El uso de la información recibida de Health Connect cumple con la Política de Permisos de Health Connect, incluidos los requisitos de uso limitado (Limited Use).</p>
+
+<h2>5. Permisos del teléfono</h2>
+<ul>
+  <li><strong>Cámara:</strong> para fotografiar sus platos y escanear códigos de barras. El escaneo de códigos de barras se procesa por completo en el teléfono.</li>
+  <li><strong>Micrófono:</strong> para grabar notas de voz opcionales que acompañan la foto.</li>
+  <li><strong>Reconocimiento de actividad y Health Connect:</strong> para leer pasos y calorías activas (sección 4).</li>
+  <li><strong>Internet:</strong> para el análisis con inteligencia artificial y la suscripción.</li>
+</ul>
+<p>Todos los permisos son opcionales: si no los concede, el resto de la aplicación sigue funcionando.</p>
+
+<h2>6. Lo que no hacemos</h2>
+<ul>
+  <li>No mostramos publicidad.</li>
+  <li>No vendemos ni alquilamos sus datos.</li>
+  <li>No usamos herramientas de rastreo publicitario ni compartimos datos con anunciantes.</li>
+  <li>No pedimos su nombre, correo ni número de teléfono para usar la aplicación.</li>
+</ul>
+
+<h2>7. Conservación y eliminación de datos</h2>
+<ul>
+  <li><strong>Datos en su teléfono:</strong> se conservan hasta que usted los borre. Para eliminarlos todos, desinstale la aplicación o use <em>Ajustes de Android → Aplicaciones → NutriAlly → Almacenamiento → Borrar datos</em>. Como no se incluyen en copias de seguridad, una vez borrados no se pueden recuperar.</li>
+  <li><strong>Datos en nuestro servidor</strong> (identificador anónimo, conteo de análisis y estado de suscripción): puede solicitar su eliminación escribiendo a <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a>. Los eliminaremos en un plazo máximo de 30 días.</li>
+</ul>
+
+<h2>8. Sus derechos</h2>
+<p>De acuerdo con la Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales de Costa Rica (Ley N.° 8968) y otras normas aplicables, usted puede solicitar el acceso, la rectificación o la eliminación de sus datos personales escribiendo a <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a>. Como casi todos sus datos están solo en su teléfono, la forma más directa de ejercer esos derechos es desde la propia aplicación o desde los ajustes de Android.</p>
+
+<h2>9. Menores de edad</h2>
+<p>NutriAlly está dirigida a personas mayores de 18 años y no está diseñada para menores de edad. Si usted sabe que un menor nos envió datos, escríbanos y los eliminaremos.</p>
+
+<h2>10. Aviso sobre información de salud</h2>
+<p>Las estimaciones de calorías y nutrientes, incluidas las generadas con inteligencia artificial, son aproximadas y no reemplazan el consejo de un profesional de la salud o de la nutrición.</p>
+
+<h2>11. Cambios a esta política</h2>
+<p>Si modificamos esta política, publicaremos la nueva versión en esta misma página con su fecha de vigencia. Si el cambio es importante, por ejemplo si empezamos a recopilar datos nuevos, también lo avisaremos dentro de la aplicación.</p>
+
+<footer>
+  <p class="muted">NutriAlly — Aion Teleos · Cartago, Costa Rica · <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a></p>
+</footer>
+</main>
+</body>
+</html>
