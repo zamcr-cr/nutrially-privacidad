@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — NutriAlly</title>
+<meta name="description" content="Privacy policy for the NutriAlly Android app.">
+<link rel="alternate" hreflang="es" href="https://zamcr-cr.github.io/nutrially-privacidad/">
+<style>
+  :root { --text:#1f2a24; --muted:#5b6b62; --accent:#2f7a5e; --bg:#fbfaf7; --card:#ffffff; --line:#e3e6e1; }
+  @media (prefers-color-scheme: dark) {
+    :root { --text:#e6ece8; --muted:#a3b2a9; --accent:#7cc7a6; --bg:#141816; --card:#1b201d; --line:#2c332f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { border-bottom: 1px solid var(--line); margin-bottom: 28px; padding-bottom: 16px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; line-height: 1.25; }
+  h2 { font-size: 1.2rem; margin: 32px 0 8px; color: var(--accent); }
+  h3 { font-size: 1.02rem; margin: 20px 0 4px; }
+  p, li { margin: 6px 0; }
+  ul { padding-left: 22px; }
+  .muted { color: var(--muted); font-size: .95rem; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+  a { color: var(--accent); }
+  footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 14px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>NutriAlly Privacy Policy</h1>
+  <p class="muted">Effective October 23, 2026</p>
+  <p class="muted"><a href="../" hreflang="es" lang="es">Leer en español</a></p>
+</header>
+
+<p>This policy explains what data the <strong>NutriAlly</strong> Android app uses, where it is stored, who it is shared with, and what control you have over it.</p>
+
+<div class="box">
+  <strong>In short:</strong> almost everything you log (weight, meals, photos, voice notes and your goal) is stored <strong>only on your phone</strong>, in an encrypted database. The only things that leave your phone are the photo, and the voice note if you record one, when you ask for an AI analysis to estimate the calories of a meal. We don't ask for your name or email, we don't show ads, and we don't sell data.
+</div>
+
+<h2>1. Who we are</h2>
+<p>NutriAlly is developed by <strong>Zedry Carlos Araya Masis</strong>, operating under the trade name <strong>Aion Teleos</strong>, in Cartago, Costa Rica.</p>
+<p>Contact for any privacy question: <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a></p>
+
+<h2>2. Data stored only on your phone</h2>
+<p>This data is not sent to our servers or to third parties:</p>
+<ul>
+  <li><strong>Goal:</strong> whether you want to lose, maintain or gain weight, and at what pace. It is used to calculate your daily calorie budget.</li>
+  <li><strong>Logs:</strong> weight, meals, calories and macronutrients.</li>
+  <li><strong>Meal photos and voice notes</strong> that you take or record inside the app.</li>
+  <li><strong>Steps and active calories</strong> read from Health Connect, if you allow it (see section 4).</li>
+  <li><strong>Your premium subscription status.</strong></li>
+</ul>
+<p>The app's database is <strong>encrypted with AES-256</strong> (SQLCipher), with a key protected by the Android Keystore. Photos and voice notes are stored in the app's private storage, which other apps cannot access. None of this data is included in Android's automatic backups.</p>
+
+<h2>3. Data that leaves your phone</h2>
+
+<h3>3.1 AI meal analysis</h3>
+<p>When you use the "Camera First" feature to analyze a meal, the app sends the <strong>photo</strong> and, if you recorded one, the <strong>voice note</strong> to our server over an encrypted connection (HTTPS). The server forwards them to the <strong>Google Gemini API</strong> to estimate the dish name, its calories and its macronutrients, and returns the result to you.</p>
+<ul>
+  <li>Our server <strong>does not store</strong> photos or voice notes: it processes and discards them.</li>
+  <li>We use the paid tier of the Gemini API. Under Google's terms for that tier, Google <strong>does not use this content to improve its products or to train its models</strong>. Google may retain it for a limited time to detect abuse and for safety and legal compliance reasons.</li>
+  <li>To protect your privacy, we recommend keeping people, documents and other personal information out of your photos.</li>
+</ul>
+
+<h3>3.2 Anonymous identifier and app integrity</h3>
+<p>To protect the analysis service against abuse, the app uses:</p>
+<ul>
+  <li><strong>Firebase Authentication in anonymous mode:</strong> creates a random identifier for your installation. It is not linked to your name, email or phone number.</li>
+  <li><strong>Firebase App Check with Play Integrity:</strong> lets our server verify that requests come from a genuine copy of NutriAlly installed from Google Play. To do this, Google processes technical signals about the integrity of the app and the device.</li>
+</ul>
+
+<h3>3.3 Daily analysis allowance</h3>
+<p>The free plan includes a limited number of AI analyses per day. To enforce it, our server stores in <strong>Google Cloud Firestore</strong>, associated with your anonymous identifier, how many analyses you made each day and whether you have an active premium subscription. The content of the analyses is not stored.</p>
+
+<h3>3.4 Purchases and subscription</h3>
+<p>Payments are processed by <strong>Google Play</strong>. NutriAlly never receives or sees your payment details. To confirm that a subscription is valid, our server checks with Google Play using the purchase token Google gives the app, and stores a <strong>cryptographic hash</strong> of that token to prevent the same purchase from being used on several installations.</p>
+
+<p class="muted">Our server and its database run on Google Cloud, in the United States.</p>
+
+<h2>4. Health Connect</h2>
+<p>With your permission, NutriAlly <strong>reads</strong> your <strong>steps</strong> and <strong>active calories burned</strong> from Health Connect, solely to show your daily energy balance on the main screen. NutriAlly <strong>never writes</strong> data to Health Connect.</p>
+<ul>
+  <li>This data is stored only on your phone and is not sent to our servers or to third parties.</li>
+  <li>It is not used for advertising and is not sold.</li>
+  <li>You can revoke the permission at any time from the app or from Health Connect settings.</li>
+</ul>
+<p>The use of information received from Health Connect will adhere to the Health Connect Permissions policy, including the Limited Use requirements.</p>
+
+<h2>5. Phone permissions</h2>
+<ul>
+  <li><strong>Camera:</strong> to photograph your meals and scan barcodes. Barcode scanning is processed entirely on the phone.</li>
+  <li><strong>Microphone:</strong> to record optional voice notes that go with the photo.</li>
+  <li><strong>Activity recognition and Health Connect:</strong> to read steps and active calories (section 4).</li>
+  <li><strong>Internet:</strong> for AI analysis and the subscription.</li>
+</ul>
+<p>All permissions are optional: if you don't grant them, the rest of the app keeps working.</p>
+
+<h2>6. What we don't do</h2>
+<ul>
+  <li>We don't show ads.</li>
+  <li>We don't sell or rent your data.</li>
+  <li>We don't use advertising trackers or share data with advertisers.</li>
+  <li>We don't ask for your name, email or phone number to use the app.</li>
+</ul>
+
+<h2>7. Retention and deletion</h2>
+<ul>
+  <li><strong>Data on your phone:</strong> kept until you delete it. To delete all of it, uninstall the app or use <em>Android Settings → Apps → NutriAlly → Storage → Clear data</em>. Because it is not included in backups, once deleted it cannot be recovered.</li>
+  <li><strong>Data on our server</strong> (anonymous identifier, analysis count and subscription status): you can request its deletion by writing to <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a>. We will delete it within 30 days at most.</li>
+</ul>
+
+<h2>8. Your rights</h2>
+<p>Under Costa Rica's Law on the Protection of Persons Regarding the Processing of Their Personal Data (Law No. 8968) and other applicable laws, you can request access to, correction of, or deletion of your personal data by writing to <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a>. Since almost all of your data is only on your phone, the most direct way to exercise those rights is from the app itself or from Android settings.</p>
+
+<h2>9. Minors</h2>
+<p>NutriAlly is intended for people 18 and older and is not designed for minors. If you know that a minor has sent us data, write to us and we will delete it.</p>
+
+<h2>10. Health information notice</h2>
+<p>Calorie and nutrient estimates, including those generated by AI, are approximate and do not replace advice from a health or nutrition professional.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>If we change this policy, we will publish the new version on this same page with its effective date. If the change is significant, for example if we start collecting new data, we will also announce it inside the app.</p>
+<p class="muted">This English version is a translation. If there is any discrepancy, the <a href="../" hreflang="es">Spanish version</a> prevails.</p>
+
+<footer>
+  <p class="muted">NutriAlly — Aion Teleos · Cartago, Costa Rica · <a href="mailto:soporte@aionteleos.com">soporte@aionteleos.com</a></p>
+</footer>
+</main>
+</body>
+</html>
